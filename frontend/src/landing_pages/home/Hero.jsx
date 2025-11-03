@@ -2,11 +2,11 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-28">
+    <section className="container mx-auto px-4 mt-[20vh]">
       <div className="flex flex-col items-center text-center">
         {/* Hero Image */}
         <img
-          src="media/images/homeHero.png"
+          src="/images/homeHero.png"
           alt="Hero Image"
           className="mb-10 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl"
         />

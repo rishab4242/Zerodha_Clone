@@ -1,59 +1,203 @@
 import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "rgb(250, 250, 250)" }}>
-      <div className="container border-top mt-5">
-        <div className="row mt-5">
-          <div className="col">
-            <img src="media/images/logo.svg" style={{ width: "50%" }} />
-            <p>
-              &copy; 2010 - 2024, Not Zerodha Broking Ltd. All rights reserved.
+    <footer className="bg-gray-50  mt-10">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          {/* Logo & Socials */}
+          <div>
+            <img
+              src="https://zerodha.com/static/images/logo.svg"
+              alt="Zerodha Logo"
+              className="w-40 mb-3"
+            />
+            <p className="text-sm text-gray-600">
+              © 2010 - 2025, Zerodha Broking Ltd.
             </p>
+            <p className="text-sm text-gray-600 mb-4">All rights reserved.</p>
+
+            {/* Social Links Row 1 */}
+            <div className="flex space-x-4 text-gray-600 text-xl mb-4">
+              <a
+                href="https://twitter.com/zerodhaonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition"
+              >
+                <FaXTwitter />
+              </a>
+              <a
+                href="https://facebook.com/zerodha.social"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-700 transition"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://instagram.com/zerodhaonline/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-600 transition"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://linkedin.com/company/zerodha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-700 transition"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
+
+            <hr className="my-4 border-gray-300" />
+
+            {/* Social Links Row 2 */}
+            <div className="flex space-x-4 text-gray-600 text-xl">
+              <a
+                href="https://www.youtube.com/@zerodhaonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-red-600 transition"
+              >
+                <FaYoutube />
+              </a>
+              <a
+                href="https://whatsapp.com/channel/0029Va8tzF0EquiIIb9j791g"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-600 transition"
+              >
+                <FaWhatsapp />
+              </a>
+              <a
+                href="https://t.me/zerodhain"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky-500 transition"
+              >
+                <FaTelegram />
+              </a>
+            </div>
           </div>
-          <div className="col">
-            <p>Company</p>
-            <a href="">About</a>
-            <br />
-            <a href="">Products</a>
-            <br />
-            <a href="">Pricing</a>
-            <br />
-            <a href="">Referral programme</a>
-            <br />
-            <a href="">Careers</a>
-            <br />
-            <a href="">Zerodha.tech</a>
-            <br />
-            <a href="">Press & media</a>
-            <br />
-            <a href="">Zerodha cares (CSR)</a>
-            <br />
+
+          {/* Company Links */}
+          <div>
+            <p className="font-semibold mb-3">Company</p>
+            <ul className="space-y-1 text-gray-600">
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Referral programme
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Zerodha.tech
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Press & media
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Zerodha cares (CSR)
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="col">
-            <p>Support</p>
-            <a href="">Contact</a>
-            <br />
-            <a href="">Support portal</a>
-            <br />
-            <a href="">Z-Connect blog</a>
-            <br />
-            <a href="">List of charges</a>
-            <br />
-            <a href="">Downloads & resources</a>
-            <br />
+
+          {/* Support Links */}
+          <div>
+            <p className="font-semibold mb-3">Support</p>
+            <ul className="space-y-1 text-gray-600">
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Support portal
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Z-Connect blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  List of charges
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Downloads & resources
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="col">
-            <p>Account</p>
-            <a href="">Open an account</a>
-            <br />
-            <a href="">Fund transfer</a>
-            <br />
-            <a href="">60 day challenge</a>
-            <br />
+
+          {/* Account Links */}
+          <div>
+            <p className="font-semibold mb-3">Account</p>
+            <ul className="space-y-1 text-gray-600">
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Open an account
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  Fund transfer
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-blue-600">
+                  60 day challenge
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mt-5 text-muted" style={{ fontSize: "14px" }}>
+
+        {/* Footer Disclaimer */}
+        <div className="text-sm text-gray-500 leading-relaxed  pt-6 space-y-4">
           <p>
             Zerodha Broking Ltd.: Member of NSE​ &​ BSE – SEBI Registration no.:
             INZ000031633 CDSL: Depository services through Zerodha Securities
@@ -61,14 +205,16 @@ function Footer() {
             through Zerodha Commodities Pvt. Ltd. MCX: 46025 – SEBI Registration
             no.: INZ000038238 Registered Address: Zerodha Broking Ltd.,
             #153/154, 4th Cross, Dollars Colony, Opp. Clarence Public School,
-            J.P Nagar 4th Phase, Bengaluru - 560078, Karnataka, India. For any
-            complaints pertaining to securities broking please write to
-            complaints@zerodha.com, for DP related to dp@zerodha.com. Please
-            ensure you carefully read the Risk Disclosure Document as prescribed
-            by SEBI | ICF
+            J.P Nagar 4th Phase, Bengaluru - 560078, Karnataka, India.
+          </p>
+          <p>
+            For complaints write to{" "}
+            <span className="text-blue-600">complaints@zerodha.com</span> or{" "}
+            <span className="text-blue-600">dp@zerodha.com</span>. Please read
+            the Risk Disclosure Document as prescribed by SEBI | ICF.
           </p>
 
-          <p>
+           <p>
             Procedure to file a complaint on SEBI SCORES: Register on SCORES
             portal. Mandatory details for filing complaints on SCORES: Name,
             PAN, Address, Mobile Number, E-mail ID. Benefits: Effective
@@ -98,6 +244,96 @@ function Footer() {
             claiming to be part of Zerodha and offering such services, please
             create a ticket here.
           </p>
+        </div>
+
+        {/* Bottom Links */}
+        <div className="mt-2 text-center">
+          <ul className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
+            <li>
+              <a
+                rel="nofollow"
+                href="https://nseindia.com"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                NSE
+              </a>
+            </li>
+            <li>
+              <a
+                rel="nofollow"
+                href="https://www.bseindia.com/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                BSE
+              </a>
+            </li>
+            <li>
+              <a
+                rel="nofollow"
+                href="https://www.mcxindia.com/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                MCX
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/terms-and-conditions/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                Terms &amp; conditions
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/policies-and-procedures/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                Policies &amp; procedures
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/privacy-policy/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                Privacy policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/disclosure/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                Disclosure
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/investor-attention/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                For investor's attention
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://zerodha.com/tos/investor-charter/"
+                target="_blank"
+                className="hover:text-blue-600 transition"
+              >
+                Investor charter
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

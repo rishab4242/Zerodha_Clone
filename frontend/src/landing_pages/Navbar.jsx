@@ -1,60 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav
-      class="navbar navbar-expand-lg border-bottom"
-      style={{ backgroundColor: "#FFF" }}
-    >
-      <div class="container p-2">
-        <a class="navbar-brand" href="#">
+    <nav className="fixed top-0 left-0 w-full bg-white border-b shadow-sm z-50">
+      <div className="container mx-auto flex items-center justify-between p-4">
+        {/* Logo */}
+        <a href="#" className="flex items-center">
           <img
-            src="media/images/logo.svg"
-            style={{ width: "25%" }}
+            src="/images/logo.svg"
             alt="Logo"
+            className="w-32 md:w-40"
           />
         </a>
+
+        {/* Hamburger Button (Mobile) */}
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-gray-700 focus:outline-none md:hidden"
         >
-          <span class="navbar-toggler-icon"></span>
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex" role="search">
-            <ul class="navbar-nav mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Signup
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Product
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Support
-                </a>
-              </li>
-            </ul>
-          </form>
+
+        {/* Navigation Links */}
+        <div
+          className={`flex-col md:flex-row md:flex md:items-center absolute md:static left-0 top-[64px] w-full md:w-auto bg-white md:bg-transparent transition-all duration-300 ease-in-out ${
+            isOpen ? "flex z-40" : "hidden"
+          }`}
+        >
+          <ul className="flex flex-col md:flex-row md:space-x-6 text-center md:text-left">
+            {["Signup", "About", "Product", "Pricing", "Support"].map(
+              (item) => (
+                <li key={item} className="my-2 md:my-0">
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition"
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
+          </ul>
         </div>
       </div>
     </nav>
