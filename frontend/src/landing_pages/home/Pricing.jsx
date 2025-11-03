@@ -2,10 +2,10 @@ import React from "react";
 
 function Pricing() {
   return (
-    <section className="container max-w-6xl mx-auto px-4 py-16">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+    <section className="container max-w-6xl mx-auto px-4 py-16 ">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2">
         {/* Left Text Section */}
-        <div className="w-full lg:w-1/3 space-y-4">
+        <div className="w-full lg:w-1/2 space-y-4">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Unbeatable pricing
           </h1>
@@ -24,15 +24,15 @@ function Pricing() {
 
         {/* Right Pricing Cards Section */}
         <div className="w-full lg:w-2/3">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3  text-left">
             {/* Box 1 */}
-            <div className="flex flex-col items-center">
+            <div className="flex  items-center ">
               <img
                 src="/images/pricing0.svg"
                 alt="Free account opening"
                 className="w-30 h-30"
               />
-              <p className="text-gray-700 text-base leading-relaxed">
+              <p className="text-gray-700 text-[11px] leading-relaxed">
                 Free account
                 <br />
                 opening
@@ -40,13 +40,13 @@ function Pricing() {
             </div>
 
             {/* Box 2 */}
-            <div className="flex flex-col items-center">
+            <div className="flex  items-center md:w-[500px]">
               <img
                 src="/images/pricing0.svg"
                 alt="Free equity delivery"
                 className="w-30 h-30"
               />
-              <p className="text-gray-700 text-base leading-relaxed">
+              <p className="text-gray-700 text-[11px] leading-relaxed">
                 Free equity delivery
                 <br />
                 and direct mutual funds
@@ -54,13 +54,13 @@ function Pricing() {
             </div>
 
             {/* Box 3 */}
-            <div className="flex flex-col items-center">
+            <div className="flex  items-center md:ml-16 md:w-[500px]">
               <img
                 src="/images/intradayTrades.svg"
                 alt="Intraday and F&O"
                 className="w-30 h-30"
               />
-              <p className="text-gray-700 text-base leading-relaxed">
+              <p className="text-gray-700 text-[11px] leading-relaxed">
                 Intraday and
                 <br />
                 F&amp;O
