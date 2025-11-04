@@ -36,7 +36,7 @@ function Hero() {
           <img
             src="/images/intradayTrades.svg"
             alt="Intraday and F&O trades"
-            className="w-50 w-70 mb-4"
+            className="w-50 md:w-70 mb-4"
           />
           <h1 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">
             Intraday and F&O trades
@@ -52,7 +52,7 @@ function Hero() {
           <img
             src="/images/pricingEquity.svg"
             alt="Free direct MF"
-            className="w-50 w-70 mb-4"
+            className="w-50 md:w-70 mb-4"
           />
           <h1 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">
             Free direct MF

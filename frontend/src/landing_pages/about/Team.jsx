@@ -11,9 +11,9 @@ function Team() {
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-start text-gray-600 leading-relaxed text-lg md:text-base space-y-6 md:space-y-0 gap-16 py-6">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start text-gray-600 leading-relaxed text-lg md:text-base space-y-6 md:space-y-0 md:gap-16 py-6">
         {/* Left Column - Image + Name */}
-        <div className="flex flex-col items-center text-center ">
+        <div className="flex flex-col items-center text-center">
           <img
             src="/images/nithinKamath.jpg"
             alt="Nithin Kamath"

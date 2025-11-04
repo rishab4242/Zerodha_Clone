@@ -2,10 +2,10 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16">
+    <section className="max-w-6xl mx-auto px-4 max-sm:mt-24 md:py-16">
       {/* Heading Section */}
-      <div className="text-center py-20 mb-12">
-        <h2 className="text-[24px] font-semibold text-gray-700 leading-relaxed">
+      <div className="text-center md:py-20 mb-12">
+        <h2 className="text-[22px] md:text-[24px] font-semibold text-gray-600 leading-8 md:leading-relaxed">
           We pioneered the discount broking model in India
           <br className="hidden sm:block" />
           Now, we are breaking ground with our technology.
