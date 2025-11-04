@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function OpenAccount() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/signup");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="container mx-auto px-6 py-10 mt-10">
       <div className="text-center">
@@ -12,7 +19,7 @@ function OpenAccount() {
           F&O trades.
         </p>
 
-        <button className="bg-blue-600 text-white font-medium text-lg px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+        <button onClick={handleButtonClick} className="bg-blue-600 text-white font-medium text-lg px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
           Sign up Now
         </button>
       </div>

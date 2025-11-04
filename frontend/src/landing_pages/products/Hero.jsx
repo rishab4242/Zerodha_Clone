@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Hero() {
   return (
     <div className="max-w-6xl mx-auto border-b border-gray-200 py-15 md:py-20 px-4">

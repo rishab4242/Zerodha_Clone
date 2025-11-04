@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Universe({ dittoImage = "/images/dittoLogo.png", dittoStyle = "" }) {
+     const navigate = useNavigate()
+
+
+ const handleButtonClick = () => {
+  navigate("/signup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
   const platforms = [
     {
       img: "/images/zerodhaFundhouse.png",
@@ -57,7 +66,7 @@ function Universe({ dittoImage = "/images/dittoLogo.png", dittoStyle = "" }) {
       </div>
 
       {/* Button */}
-      <button className="bg-blue-600 text-white font-medium px-8 py-2 text-lg rounded-md hover:bg-blue-700 transition duration-200">
+      <button onClick={handleButtonClick} className="bg-blue-600 text-white font-medium px-8 py-2 text-lg rounded-md hover:bg-blue-700 transition duration-200">
         Signup Now
       </button>
     </section>
