@@ -6,10 +6,11 @@ import AboutPage from "./landing_pages/about/AboutPage";
 import PricingPage from "./landing_pages/pricing/PricingPage";
 import ProductsPage from "./landing_pages/products/ProductsPage";
 import SupportPage from "./landing_pages/support/SupportPage";
+import NotFound from "./landing_pages/NotFound";
 import Navbar from "./landing_pages/Navbar";
 import Footer from "./landing_pages/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import ScrollToTopNavigation from "./components/ScrollToTopNavigation"; 
+import ScrollToTopNavigation from "./components/ScrollToTopNavigation";
 import Signup from "./landing_pages/signup/SignUp";
 import Login from "./landing_pages/login/Login";
 import { isTokenExpired } from "./utils/checkToken";
@@ -54,6 +55,7 @@ const App = () => {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer
         position="top-center"
@@ -73,7 +75,7 @@ const App = () => {
       />
       <Footer />
       <ScrollToTopButton /> {/* floating button */}
-      <ScrollToTopNavigation/>
+      <ScrollToTopNavigation />
     </BrowserRouter>
   );
 };
