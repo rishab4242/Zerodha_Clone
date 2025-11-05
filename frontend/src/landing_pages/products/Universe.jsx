@@ -8,7 +8,7 @@ function Universe({ dittoImage = "/images/dittoLogo.png", dittoStyle = "" }) {
 
  const handleButtonClick = () => {
   navigate("/signup");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "auto" });
 };
   const platforms = [
     {
@@ -66,7 +66,7 @@ function Universe({ dittoImage = "/images/dittoLogo.png", dittoStyle = "" }) {
       </div>
 
       {/* Button */}
-      <button onClick={handleButtonClick} className="bg-blue-600 text-white font-medium px-8 py-2 text-lg rounded-md hover:bg-blue-700 transition duration-200">
+      <button onClick={handleButtonClick} className="bg-blue-600 cursor-pointer text-white font-medium px-8 py-2 text-lg rounded-md hover:bg-blue-700 transition duration-200">
         Signup Now
       </button>
     </section>

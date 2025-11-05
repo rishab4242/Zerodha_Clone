@@ -9,7 +9,7 @@ function ScrollToTopNavigation() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth", // You can use "auto" for instant scroll
+      behavior: "auto", // You can use "auto" for instant scroll
     });
   }, [pathname]); // runs every time route changes
 

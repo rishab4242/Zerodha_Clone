@@ -68,7 +68,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white border-b shadow-sm z-50">
+    <div className="fixed top-0 left-0 right-0 bg-white  shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={handleLinkClick}>
@@ -111,10 +111,119 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
         {/* Navigation Links */}
         <div
           className={`${
-            isOpen ? "block" : "hidden"
-          } w-full lg:flex lg:items-center lg:w-auto`}
+            isOpen
+              ? "block lg:hidden"
+              : "hidden lg:flex lg:items-center lg:w-auto"
+          }`}
         >
-          <ul className="flex flex-col lg:flex-row lg:space-x-10 mt-4 lg:mt-0 text-center">
+          {/* ✅ Overlay Effect */}
+          {isOpen && (
+            <div
+              className="fixed inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity duration-300 z-40"
+              onClick={() => setIsOpen(false)}
+            ></div>
+          )}
+
+          {/* ✅ Mobile Popup Menu */}
+          {isOpen && (
+            <div className="fixed top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md shadow-lg p-6 w-[345px] z-50">
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-4xl"
+              >
+                ×
+              </button>
+
+              {/* Links Grid */}
+              <ul className="grid grid-cols-2 gap-y-3 text-gray-700 text-sm mt-6">
+                <li>
+                  <Link
+                    to="/signup"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Signup
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/pricing"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/support"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Support
+                  </Link>
+                </li>
+
+                {/* ✅ Logout aligned to bottom-right */}
+                {isLoggedIn ? (
+                  <li className="self-end ">
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        handleLinkClick();
+                      }}
+                      className="text-gray-700 hover:text-red-600"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <>
+                    <li>
+                      <Link
+                        to="/login"
+                        onClick={handleLinkClick}
+                        className="hover:text-red-600"
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/signup"
+                        onClick={handleLinkClick}
+                        className="hover:text-red-600"
+                      >
+                        Signup
+                      </Link>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+          )}
+
+          {/* ✅ Desktop Menu stays same */}
+          <ul className="hidden lg:flex lg:flex-row lg:space-x-10 mt-4 lg:mt-0 text-center">
             <li>
               <Link
                 to="/about"
@@ -151,7 +260,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 Support
               </Link>
             </li>
-            {/* Conditionally render login/logout buttons */}
+
             {isLoggedIn ? (
               <li>
                 <button

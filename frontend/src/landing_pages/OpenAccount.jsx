@@ -6,7 +6,7 @@ function OpenAccount() {
 
   const handleButtonClick = () => {
     navigate("/signup");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
   return (
     <div className="container mx-auto px-6 py-10 mt-10">
@@ -19,7 +19,7 @@ function OpenAccount() {
           F&O trades.
         </p>
 
-        <button onClick={handleButtonClick} className="bg-blue-600 text-white font-medium text-lg px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+        <button onClick={handleButtonClick} className="bg-blue-600 text-white cursor-pointer font-medium text-lg px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
           Sign up Now
         </button>
       </div>

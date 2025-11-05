@@ -9,7 +9,7 @@ function Hero() {
 
  const handleButtonClick = () => {
   navigate("/signup");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "auto" });
 };
 
   return (
@@ -36,7 +36,7 @@ function Hero() {
         {/* CTA Button */}
         <button
         onClick={handleButtonClick}
-          className="mt-8 mb-12 px-8 py-3 sm:px-10 sm:py-4 bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-md hover:bg-blue-700 transition-all duration-300 w-2/3 sm:w-1/3 md:w-1/4 lg:w-1/5"
+          className="mt-8 mb-12 px-8 py-3 sm:px-10 sm:py-4 cursor-pointer bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-md hover:bg-blue-700 transition-all duration-300 w-2/3 sm:w-1/3 md:w-1/4 lg:w-1/5"
         >
           Signup Now
         </button>

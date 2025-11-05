@@ -8,7 +8,8 @@ import ProductsPage from "./landing_pages/products/ProductsPage";
 import SupportPage from "./landing_pages/support/SupportPage";
 import Navbar from "./landing_pages/Navbar";
 import Footer from "./landing_pages/Footer";
-import ScrollToTopButton from "./components/ScrollToTopButton"; // <-- add this
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopNavigation from "./components/ScrollToTopNavigation"; 
 import Signup from "./landing_pages/signup/SignUp";
 import Login from "./landing_pages/login/Login";
 import { isTokenExpired } from "./utils/checkToken";
@@ -72,6 +73,7 @@ const App = () => {
       />
       <Footer />
       <ScrollToTopButton /> {/* floating button */}
+      <ScrollToTopNavigation/>
     </BrowserRouter>
   );
 };
