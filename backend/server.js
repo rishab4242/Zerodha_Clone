@@ -17,7 +17,6 @@ import Holding from "./models/HoldingsSchema.js";
 import Position from "./models/PositionsSchema.js";
 import Order from "./models/OrdersSchema.js";
 import User from "./models/UserModel.js";
-import authMiddleware from "./authMiddleware/authMiddleware.js";
 
 mongoose
   .connect(process.env.MONGO_URI || PORT)
@@ -203,7 +202,7 @@ app.get("/allPositions", async (req, res) => {
   res.send(allPositions);
 });
 
-app.post("/newOrder", authMiddleware, async (req, res) => {
+app.post("/newOrder",  async (req, res) => {
   let newOrder = new Order({
     name: req.body.name,
     qty: req.body.qty,
