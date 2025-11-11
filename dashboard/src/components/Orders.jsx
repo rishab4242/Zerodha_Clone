@@ -6,9 +6,16 @@ const Orders = () => {
   const [allOrders, setAllOrders] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:5000/allOrders").then((res) => {
-      setAllOrders(res.data);
-    });
+    const token = localStorage.getItem("token");
+
+    axios
+      .get("http://localhost:5000/allOrders")
+      .then((res) => {
+        setAllOrders(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching orders:", err);
+      });
   }, []);
 
   return (
