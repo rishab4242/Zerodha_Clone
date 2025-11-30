@@ -183,24 +183,41 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    to="/login"
-                    onClick={handleLinkClick}
-                    className="hover:text-red-600"
-                  >
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/signup"
-                    onClick={handleLinkClick}
-                    className="hover:text-red-600"
-                  >
-                    Signup
-                  </Link>
-                </li>
+                {/* ✅ Logout aligned to bottom-right */}
+                {isLoggedIn ? (
+                  <li className="self-end ">
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        handleLinkClick();
+                      }}
+                      className="text-gray-700 hover:text-red-600"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <>
+                    <li>
+                      <Link
+                        to="/login"
+                        onClick={handleLinkClick}
+                        className="hover:text-red-600"
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/signup"
+                        onClick={handleLinkClick}
+                        className="hover:text-red-600"
+                      >
+                        Signup
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           )}
@@ -243,24 +260,41 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 Support
               </Link>
             </li>
-            <li>
-              <Link
-                to="/login"
-                className="block py-2 text-gray-700 hover:text-red-600"
-                onClick={handleLinkClick}
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/signup"
-                className="block py-2 text-gray-700 hover:text-red-600"
-                onClick={handleLinkClick}
-              >
-                Signup
-              </Link>
-            </li>
+
+            {isLoggedIn ? (
+              <li>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    handleLinkClick();
+                  }}
+                  className="block py-2 text-gray-700 hover:text-red-600 cursor-pointer"
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to="/login"
+                    className="block py-2 text-gray-700 hover:text-red-600"
+                    onClick={handleLinkClick}
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="block py-2 text-gray-700 hover:text-red-600"
+                    onClick={handleLinkClick}
+                  >
+                    Signup
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
