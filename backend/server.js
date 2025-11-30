@@ -10,7 +10,13 @@ import bodyParser from "body-parser";
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://zerodha-clone-frontend-ifke.onrender.com/",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 import Holding from "./models/HoldingsSchema.js";
@@ -202,7 +208,7 @@ app.get("/allPositions", async (req, res) => {
   res.send(allPositions);
 });
 
-app.post("/newOrder",  async (req, res) => {
+app.post("/newOrder", async (req, res) => {
   let newOrder = new Order({
     name: req.body.name,
     qty: req.body.qty,
