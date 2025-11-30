@@ -13,45 +13,16 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import ScrollToTopNavigation from "./components/ScrollToTopNavigation";
 import Signup from "./landing_pages/signup/SignUp";
 import Login from "./landing_pages/login/Login";
-import { isTokenExpired } from "./utils/checkToken";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token && isTokenExpired(token)) {
-      localStorage.removeItem("token");
-      setIsLoggedIn(false);
-    } else {
-      setIsLoggedIn(!!token);
-    }
-  }, []);
-
-  if (isLoggedIn === null) return null;
-
   return (
     <BrowserRouter>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/signup"
-          element={isLoggedIn ? <Navigate to="/" /> : <Signup />}
-        />
-
-        <Route
-          path="/login"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/" />
-            ) : (
-              <Login setIsLoggedIn={setIsLoggedIn} />
-            )
-          }
-        />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/products" element={<ProductsPage />} />
