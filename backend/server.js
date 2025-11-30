@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://zerodha-clone-frontend-ifke.onrender.com/",
+    origin: "https://zerodha-clone-frontend-ifke.onrender.com",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
