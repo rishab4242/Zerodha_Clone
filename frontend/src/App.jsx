@@ -36,11 +36,12 @@ const App = () => {
     <BrowserRouter>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/"
-          element={isLoggedIn ? <HomePage /> : <Navigate to="/login" />}
+          path="/signup"
+          element={isLoggedIn ? <Navigate to="/" /> : <Signup />}
         />
+
         <Route
           path="/login"
           element={
