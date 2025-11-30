@@ -155,12 +155,18 @@ const CustomField = ({ name, type = "text", placeholder, errors, touched }) => {
   );
 };
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [showWelcome, setShowWelcome] = useState(false);
   const [generalError, setGeneralError] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  
+  // Check token on mount (handles refresh)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, [setIsLoggedIn]);
 
   const initialValues = {
     email: "",
