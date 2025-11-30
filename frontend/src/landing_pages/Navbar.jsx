@@ -183,41 +183,24 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                   </Link>
                 </li>
 
-                {/* ✅ Logout aligned to bottom-right */}
-                {isLoggedIn ? (
-                  <li className="self-end ">
-                    <button
-                      onClick={() => {
-                        handleLogout();
-                        handleLinkClick();
-                      }}
-                      className="text-gray-700 hover:text-red-600"
-                    >
-                      Logout
-                    </button>
-                  </li>
-                ) : (
-                  <>
-                    <li>
-                      <Link
-                        to="/login"
-                        onClick={handleLinkClick}
-                        className="hover:text-red-600"
-                      >
-                        Login
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/signup"
-                        onClick={handleLinkClick}
-                        className="hover:text-red-600"
-                      >
-                        Signup
-                      </Link>
-                    </li>
-                  </>
-                )}
+                <li>
+                  <Link
+                    to="/login"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    onClick={handleLinkClick}
+                    className="hover:text-red-600"
+                  >
+                    Signup
+                  </Link>
+                </li>
               </ul>
             </div>
           )}
