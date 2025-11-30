@@ -198,7 +198,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleWelcomeClose = () => {
     setShowWelcome(false);
     setIsLoggedIn(true);
-    navigate("/");
+    navigate("https://zerodha-clone-dashboard-34x8.onrender.com");
   };
 
   return (
