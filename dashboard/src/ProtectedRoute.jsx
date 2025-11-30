@@ -5,7 +5,7 @@ const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
 
   if (!token) {
-    return <Navigate to="https://zerodha-clone-frontend-ifke.onrender.com" />;
+    return <Navigate to="/" />;
   }
 
   return children;
