@@ -9,7 +9,7 @@ const Orders = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/allOrders")
+      .get("https://zerodha-clone-backend-v8te.onrender.com/allOrders")
       .then((res) => {
         setAllOrders(res.data);
       })
