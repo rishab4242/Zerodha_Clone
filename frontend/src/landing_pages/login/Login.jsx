@@ -199,6 +199,7 @@ const Login = ({ setIsLoggedIn }) => {
     setShowWelcome(false);
     setIsLoggedIn(true);
     window.location.href = "https://zerodha-clone-dashboard-34x8.onrender.com";
+    // navigate("/")
   };
 
   return (
