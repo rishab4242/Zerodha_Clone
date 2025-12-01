@@ -10,10 +10,14 @@ import bodyParser from "body-parser";
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+const allowedOrigins = [
+  "https://zerodha-clone-frontend-ifke.onrender.com",
+  "https://zerodha-clone-dashboard-34x8.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "https://zerodha-clone-frontend-ifke.onrender.com",
-    origin: "https://zerodha-clone-dashboard-34x8.onrender.com",
+    origin: allowedOrigins,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
