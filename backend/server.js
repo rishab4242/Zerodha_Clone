@@ -17,6 +17,8 @@ app.use(
     credentials: true,
   })
 );
+
+// app.use(cors());
 app.use(bodyParser.json());
 
 import Holding from "./models/HoldingsSchema.js";
