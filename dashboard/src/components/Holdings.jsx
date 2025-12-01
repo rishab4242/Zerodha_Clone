@@ -6,11 +6,9 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-backend-v8te.onrender.com/allHoldings")
-      .then((res) => {
-        setAllHoldings(res.data);
-      });
+    axios.get("https://zerodha-clone-backend-v8te.onrender.com/allHoldings").then((res) => {
+      setAllHoldings(res.data);
+    });
   }, []);
 
   // Chart data

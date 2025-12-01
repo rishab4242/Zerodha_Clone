@@ -5,9 +5,11 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/allPositions").then((res) => {
-      setAllPositions(res.data);
-    });
+    axios
+      .get("https://zerodha-clone-backend-v8te.onrender.com/allPositions")
+      .then((res) => {
+        setAllPositions(res.data);
+      });
   }, []);
   return (
     <div className="positions">
