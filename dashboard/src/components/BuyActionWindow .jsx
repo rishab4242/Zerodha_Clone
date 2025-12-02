@@ -13,7 +13,7 @@ const BuyActionWindow = ({ uid }) => {
   const marginRequired = (stockQuantity * stockPrice).toFixed(2);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:5000/newOrder", {
+    axios.post("https://zerodha-clone-backend-v8te.onrender.com/newOrder", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
