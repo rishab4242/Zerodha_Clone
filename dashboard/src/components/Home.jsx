@@ -1,17 +1,14 @@
 import React from "react";
-
-import Dashboard from "./Dashboard ";
+import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
 import ProtectedRoute from "../ProtectedRoute";
 
 const Home = () => {
   return (
-    <>
+    <ProtectedRoute>
       <TopBar />
-      <ProtectedRoute>
-        <Dashboard />
-      </ProtectedRoute>
-    </>
+      <Dashboard />
+    </ProtectedRoute>
   );
 };
 
