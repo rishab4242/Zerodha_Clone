@@ -37,20 +37,9 @@ const App = () => {
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="/signup" element={<Signup />} />
-        <Route
-          path="/"
-          element={isLoggedIn ? <HomePage /> : <Navigate to="/login" />}
-        />
-        <Route
-          path="/login"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/" />
-            ) : (
-              <Login setIsLoggedIn={setIsLoggedIn} />
-            )
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+
+        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/products" element={<ProductsPage />} />
@@ -74,11 +63,10 @@ const App = () => {
         }}
       />
       <Footer />
-      <ScrollToTopButton /> {/* floating button */}
+      <ScrollToTopButton />
       <ScrollToTopNavigation />
     </BrowserRouter>
   );
 };
 
-export default App;   
-
+export default App;
