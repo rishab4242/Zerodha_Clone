@@ -2,12 +2,15 @@ import React from "react";
 
 import Dashboard from "./Dashboard ";
 import TopBar from "./TopBar";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Home = () => {
   return (
     <>
       <TopBar />
-      <Dashboard />
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
     </>
   );
 };
