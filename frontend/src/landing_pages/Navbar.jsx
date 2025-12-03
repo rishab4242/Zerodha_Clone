@@ -55,7 +55,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
     });
 
     // Remove token and update state
-    localStorage.removeItem("token");
+    localStorage.getItem("token");
     {
       token ? (
         <button
