@@ -30,6 +30,17 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const syncLogout = (event) => {
+      if (event.key === "logout-event") {
+        setIsLoggedIn(false);
+      }
+    };
+
+    window.addEventListener("storage", syncLogout);
+    return () => window.removeEventListener("storage", syncLogout);
+  }, []);
+
   if (isLoggedIn === null) return null;
 
   return (
