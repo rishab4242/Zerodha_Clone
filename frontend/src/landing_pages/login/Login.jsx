@@ -155,18 +155,10 @@ const CustomField = ({ name, type = "text", placeholder, errors, touched }) => {
   );
 };
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
   const [showWelcome, setShowWelcome] = useState(false);
   const [generalError, setGeneralError] = useState("");
   const navigate = useNavigate();
-
-  // Check token on mount (handles refresh)
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLoggedIn(true);
-    }
-  }, [setIsLoggedIn]);
 
   const initialValues = {
     email: "",
@@ -197,7 +189,6 @@ const Login = ({ setIsLoggedIn }) => {
 
   const handleWelcomeClose = () => {
     setShowWelcome(false);
-    setIsLoggedIn(true);
     window.location.href = "https://zerodha-clone-dashboard-34x8.onrender.com";
     // navigate("/")
   };
