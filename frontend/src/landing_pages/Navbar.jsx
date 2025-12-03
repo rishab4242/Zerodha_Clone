@@ -56,12 +56,27 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
 
     // Remove token and update state
     localStorage.removeItem("token");
-    setIsLoggedIn(false);
-
-    // Navigate after showing toast
-    setTimeout(() => {
-      navigate("/login");
-    }, 1500);
+    {
+      token ? (
+        <button
+          onClick={() =>
+            (window.location.href =
+              "https://zerodha-clone-dashboard-34x8.onrender.com")
+          }
+        >
+          Dashboard
+        </button>
+      ) : (
+        <>
+          <button onClick={() => (window.location.href = "/login")}>
+            Login
+          </button>
+          <button onClick={() => (window.location.href = "/signup")}>
+            Signup
+          </button>
+        </>
+      );
+    }
   };
 
   // ✅ Close mobile menu after link click

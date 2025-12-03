@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar />
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<HomePage />} />
