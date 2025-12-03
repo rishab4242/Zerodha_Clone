@@ -57,8 +57,10 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
     // Remove token and update state
     localStorage.removeItem("token");
 
-    localStorage.setItem("logout-event", Date.now());
-    window.location.href = "/";
+    // Navigate after showing toast
+    setTimeout(() => {
+      navigate("/login");
+    }, 1500);
   };
 
   // ✅ Close mobile menu after link click

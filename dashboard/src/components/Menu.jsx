@@ -16,7 +16,6 @@ const Menu = () => {
   // 🔥 Logout Handler
   const handleLogout = () => {
     localStorage.clear();
-    localStorage.setItem("logout-event", Date.now()); // 🔥 event fire
     window.location.href = "https://zerodha-clone-frontend-ifke.onrender.com/";
   };
 
