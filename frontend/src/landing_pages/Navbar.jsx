@@ -55,28 +55,10 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
     });
 
     // Remove token and update state
-    localStorage.getItem("token");
-    {
-      token ? (
-        <button
-          onClick={() =>
-            (window.location.href =
-              "https://zerodha-clone-dashboard-34x8.onrender.com")
-          }
-        >
-          Dashboard
-        </button>
-      ) : (
-        <>
-          <button onClick={() => (window.location.href = "/login")}>
-            Login
-          </button>
-          <button onClick={() => (window.location.href = "/signup")}>
-            Signup
-          </button>
-        </>
-      );
-    }
+    localStorage.removeItem("token");
+
+    localStorage.setItem("logout-event", Date.now());
+    window.location.href = "/";
   };
 
   // ✅ Close mobile menu after link click
