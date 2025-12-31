@@ -136,7 +136,7 @@ function Navbar({ isLoggedIn }) {
 
               {/* Links Grid */}
               <ul className="grid grid-cols-2 gap-y-3 text-gray-700 text-sm mt-6">
-                <li>
+                {/* <li>
                   <Link
                     to="/signup"
                     onClick={handleLinkClick}
@@ -144,7 +144,7 @@ function Navbar({ isLoggedIn }) {
                   >
                     Signup
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     to="/about"
